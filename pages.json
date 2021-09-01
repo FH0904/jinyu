@@ -1,5 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	
 		{
 			"path": "pages/tabbar/profile",
 			"style": {
@@ -50,7 +51,24 @@
 				"navigationStyle": "custom"
 			}
 
+		},
+		{
+			"path": "pages/profile/user-information",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"enablePullDownRefresh": false
+			}
+		
+		},
+		{
+			"path": "pages/profile/setting",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"enablePullDownRefresh": false
+			}
+		
 		}
+		
 	],
 	"tabBar": {
 		"custom": true,

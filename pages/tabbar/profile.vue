@@ -2,7 +2,7 @@
 	<view>
 		<view class="top-header">
 			<u-navbar :background="background" :is-fixed="false" :is-back="false" :border-bottom="false"></u-navbar>
-			<view class="user-info">
+			<view class="user-info" @click="navTo('/pages/profile/user-information')">
 				<view class="avatar">
 					<image src="/static/images/profile/photo@2x.png" mode=""></image>
 				</view>
@@ -45,7 +45,7 @@
 					<image src="/static/images/index/determine@2x.png" mode=""></image>
 				</view>
 			</view>
-			<view class="l-list" :hover-stay-time="200" hover-class="u-hover-class">
+			<view class="l-list" :hover-stay-time="200" hover-class="u-hover-class" @click="navTo('/pages/profile/setting')">
 				<image src="/static/images/profile/set@2x.png" mode=""></image>
 				<view class="l-right">
 					<text>设置</text>
@@ -66,6 +66,13 @@
 					background: 'transparent'
 				}
 			};
+		},
+		methods:{
+			navTo(url) {
+				uni.navigateTo({
+					url
+				})
+			}
 		}
 	}
 </script>
