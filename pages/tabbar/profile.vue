@@ -19,11 +19,11 @@
 		
 		
 		<view class="team-msg">
-			<view class="m-item" style="border-right: 1px solid #EEEEEE;" :hover-stay-time="200" hover-class="u-hover-class">
+			<view class="m-item" @click="navTo('/pages/profile/my-wallet')" style="border-right: 1px solid #EEEEEE;" :hover-stay-time="200" hover-class="u-hover-class">
 				<text class="l-numner">9999.99</text>
 				<text class="l-text">钱包(元)</text>
 			</view>
-			<view class="m-item" :hover-stay-time="200" hover-class="u-hover-class">
+			<view class="m-item" @click="navTo('/pages/profile/my-team')" :hover-stay-time="200" hover-class="u-hover-class">
 				<text class="l-numner">999999</text>
 				<text class="l-text">团队(人)</text>
 			</view>
@@ -31,7 +31,7 @@
 		
 		
 		<view class="explain-list">
-			<view class="l-list" :hover-stay-time="200" hover-class="u-hover-class">
+			<view class="l-list" @click="navTo('/pages/profile/my-card')" :hover-stay-time="200" hover-class="u-hover-class">
 				<image src="/static/images/profile/wddd@2x.png" mode=""></image>
 				<view class="l-right">
 					<text>银行卡</text>

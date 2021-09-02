@@ -69,7 +69,45 @@
 		
 		}
 		
-	],
+	    ,{
+            "path" : "pages/profile/my-wallet",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "钱包",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#FFFFFF"
+            }
+            
+        }
+        ,{
+            "path" : "pages/profile/my-team",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/profile/add-card",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "填加银行卡",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/profile/my-card",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "银行卡",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"tabBar": {
 		"custom": true,
 		"color": "#2F3030",
