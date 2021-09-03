@@ -107,6 +107,16 @@
             }
             
         }
+        ,{
+            "path" : "pages/invitation/invite-friend",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
     ],
 	"tabBar": {
 		"custom": true,
