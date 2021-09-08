@@ -4,7 +4,7 @@
 			<view class="balance-text">可提现余额(元)</view>
 			<view class="balance-price">
 				<view class="b-num">9999.00</view>
-				<view class="b-btn">去提现</view>
+				<view class="b-btn" @click="navTo('/pages/profile/withdrawal')">去提现</view>
 			</view>
 			<view class="line"></view>
 			<view class="balance-bottom">

@@ -14,7 +14,7 @@
 			</view>
 			<u-image width="300rpx" height="300rpx" src="/static/images/index/repayment@2x.png" style="margin-top: 50rpx;"></u-image>
 		</view>
-		<view class="grid-content" style="margin: 30rpx auto 0;" :hover-stay-time="200" hover-class="u-hover-class">
+		<view @click="navTo('/pages/index/repayment')" class="grid-content" style="margin: 30rpx auto 0;" :hover-stay-time="200" hover-class="u-hover-class">
 			<view class="c-left">
 				<view class="l-text1">刷卡</view>
 				<view class="l-text2">实时到账</view>
@@ -43,6 +43,13 @@
 					background: 'transparent'
 				}
 			};
+		},
+		methods: {
+			navTo(url) {
+				uni.navigateTo({
+					url      
+				})
+			}
 		}
 	}
 </script>

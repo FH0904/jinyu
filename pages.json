@@ -117,6 +117,53 @@
             }
             
         }
+		,{
+		    "path" : "pages/profile/withdrawal",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "提现",
+		        "enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView":{
+						"buttons":[{
+							"text": "提现记录", //原生标题栏增加分享按钮，点击事件可通过页面的 onNavigationBarButtonTap 函数进行监听
+							"fontSize": "28rpx",
+							"color": "#2878FF",
+							"width": "150upx"
+						}]
+					}
+				}
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/profile/withdrawal-list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "提现记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/profile/add-card2",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "添加银行卡",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/repayment",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "收银台",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
     ],
 	"tabBar": {
 		"custom": true,
