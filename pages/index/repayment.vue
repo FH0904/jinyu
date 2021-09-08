@@ -54,7 +54,7 @@
 		
 		<view class="exit-btn">
 			<view class="b-tip">防诈骗擦亮眼，拒绝诱惑不贪心</view>
-			<u-button :custom-style="customStyle" shape="circle" :ripple="true" @click="navTo">下一步</u-button>
+			<u-button :custom-style="customStyle" shape="circle" :ripple="true" @click="navTo('/pages/index/check-out')">下一步</u-button>
 		</view>
 	</view>
 </template>
@@ -74,6 +74,13 @@
 					width:'690rpx'
 				}
 			};
+		},
+		methods: {
+			navTo(url) {
+				uni.navigateTo({
+					url
+				})
+			}
 		}
 	}
 </script>

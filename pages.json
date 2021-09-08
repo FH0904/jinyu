@@ -164,6 +164,16 @@
             }
             
         }
+        ,{
+            "path" : "pages/index/check-out",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
     ],
 	"tabBar": {
 		"custom": true,
