@@ -6,7 +6,7 @@
 			<view class="h-tip">金鱼欢迎您</view>
 		</view>
 		<u-image width="100%" height="460rpx" src="/static/images/index/top_backdrop@2x.png"></u-image>
-		<view class="grid-content" style="margin: -188rpx auto 0;"  :hover-stay-time="200" hover-class="u-hover-class">
+		<view class="grid-content" style="margin: -200rpx auto 0;"  :hover-stay-time="200" hover-class="u-hover-class">
 			<view class="c-left">
 				<view class="l-text1">还款</view>
 				<view class="l-text2">一千还10000</view>

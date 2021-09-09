@@ -1,3 +1,5 @@
 module.exports =  {
-	"apiBaseUrl": 'https://testynt.jingshishidai.com/',
+	// 开发环境
+	// "apiBaseUrl": 'https://testynt.jingshishidai.com/',
+	"apiBaseUrl": 'http://api.toodao.net/'
 }

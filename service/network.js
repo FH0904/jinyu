@@ -69,7 +69,7 @@ export default {
 		options.method = options.method || this.config.method
 		options.header = {
 			'Content-Type':'application/json;',//'application/x-www-form-urlencoded'
-			'Mmhang-Deal-Token': uni.getStorageSync('userToken') || ''
+			'Gold-Fish-Token': uni.getStorageSync('userToken') || ''
 		}
 
 		return new Promise((resolve, reject) => {
@@ -95,7 +95,7 @@ export default {
 					// }
 					let result = response.data
 					// 请求失败的提示或返回
-					if ( result.code === 403 || result.code === 500 || result.code === 400 || result.code === -2) {
+					if ( result.code === 403 || result.code === 500 || result.code === 400 || result.code === 700 || result.code === 702) {
 						if(result.msg !== "")
 						showToast(result.msg || '网络错误，请重试！')
 						return 

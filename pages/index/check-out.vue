@@ -14,14 +14,23 @@
 			</view>
 		</view>
 		<view class="team-list">
-			<view class="l-item">
+			<view class="l-item" style="border-right: 1px solid rgba(255,255,255,.3);">
 				<text class="i-text1">费率</text>
-				<text class="i-text2">10318</text>
+				<text class="i-text2">0.59%+1 </text>
 			</view>
 			<view class="l-item">
 				<text class="i-text1">手续费(元)</text>
 				<text class="i-text2">10318</text>
 			</view>
+		</view>
+		<view class="tip">
+			<view class="t-list">温馨提示：</view>
+			<view class="t-list">到账金额=刷卡金额-(收银金额*0.59%+1)</view>
+			<view class="t-list">9940.00=10000.00-(10000*0.59%+1)</view>
+		</view>
+		
+		<view class="exit-btn">
+			<u-button :custom-style="customStyle" shape="circle" :ripple="true" @click="navTo('/pages/index/verification-code')">下一步</u-button>
 		</view>
 	</view>
 </template>
@@ -33,11 +42,22 @@
 				background:{
 					background: 'transparent'
 				},
+				customStyle:{
+					background: '#2878FF',
+					color:'#fff',
+					height:'80rpx',
+					width:'690rpx'
+				}
 			};
 		},
 		methods:{
 			customBack() {
 				uni.navigateBack()
+			},
+			navTo(url) {
+				uni.navigateTo({
+					url
+				})
 			}
 		}
 	}
@@ -84,6 +104,40 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.i-text1 {
+			font-size: 26rpx;
+			color: #AAAAAA;
+		}
+		.i-text2 {
+			font-size: 40rpx;
+			font-weight: bold;
+			margin-top: 30rpx;
+			color: #222;
+		}
 	}
+}
+.tip {
+	font-size: 24rpx;
+	color: #666666;
+	margin: 40rpx 0 0 30rpx;
+	.t-list {
+		line-height: 40rpx;
+	}
+}
+.exit-btn {
+	position: fixed;
+	bottom: 0;
+	width: 750rpx;
+	height: 120rpx;
+	background: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 30rpx;
 }
 </style>

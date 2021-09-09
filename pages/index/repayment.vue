@@ -2,7 +2,7 @@
 	<view>
 		<view class="top-header">
 			<u-navbar  :background="background" title="邀请好友" title-color="#fff" title-bold :border-bottom="false" back-icon-color="#fff" >
-				<view style="display: flex;justify-content: flex-end;flex: 1;padding-right: 32rpx;font-size: 28rpx;color: #FFFFFF;">
+				<view @click="navTo('/pages/index/cashier-record')" style="display: flex;justify-content: flex-end;flex: 1;padding-right: 32rpx;font-size: 28rpx;color: #FFFFFF;">
 					刷卡记录
 				</view>
 			</u-navbar>

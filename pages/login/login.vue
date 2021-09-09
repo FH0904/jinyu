@@ -9,17 +9,17 @@
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/phone@2x.png" mode=""></image>
-					<input type="text" placeholder="请输入手机号" placeholder-style="color:#aaaaaa" />
+					<input type="text" v-model="mobile" placeholder="请输入手机号" placeholder-style="color:#aaaaaa"  />
 				</view>
-			</view>
+			</view> 
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/password@2x.png" mode=""></image>
-					<input type="password" placeholder="请输入登录密码" placeholder-style="color:#aaaaaa" />
+					<input type="password" v-model="password" placeholder="请输入登录密码" placeholder-style="color:#aaaaaa" />
 				</view>
 				<image src="/static/images/index/hide@2x.png" mode="" class="ice"></image>
 			</view>
-			<u-button :custom-style="customStyle" shape="circle" :ripple="true">登录</u-button>
+			<u-button :custom-style="customStyle" shape="circle" :ripple="true" @click="login">登录</u-button>
 			<view class="forget" @click="navTo('/pages/login/forgot-password')">忘记密码</view>
 		</view>
 		<view class="b-tip">
@@ -41,7 +41,9 @@
 					color:'#fff',
 					marginTop: '60rpx',
 					height:'80rpx'
-				}
+				},
+				mobile:'',
+				password:''
 			};
 		},
 		methods:{
@@ -52,6 +54,14 @@
 			},
 			customBack() {
 				uni.navigateBack()
+			},
+			async login() {
+				let res = await this.$http.login({
+					mobile:this.mobile,
+					loginType:0,
+					password:this.password
+				})
+				console.log(res);
 			}
 		}
 	}

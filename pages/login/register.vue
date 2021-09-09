@@ -9,15 +9,15 @@
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/phone@2x.png" mode=""></image>
-					<input type="text" placeholder="请输入手机号" placeholder-style="color:#aaaaaa" />
+					<input v-model="mobile" type="text" placeholder="请输入手机号" placeholder-style="color:#aaaaaa" />
 				</view>
 			</view>
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/captcha@2x.png" mode=""></image>
-					<input type="text" placeholder="请输入验证码" placeholder-style="color:#aaaaaa" />
+					<input v-model="password" type="text" placeholder="请输入验证码" placeholder-style="color:#aaaaaa" />
 				</view>
-				<view class="code">获取验证码</view>
+				<view class="code" @click="getVerify">{{verCodeText}}</view>
 			</view>
 			<view class="c-input">
 				<view class="c-input-left">
@@ -29,7 +29,7 @@
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/invitee@2x.png" mode=""></image>
-					<input type="password" placeholder="请输入邀请人手机号" placeholder-style="color:#aaaaaa" />
+					<input  type="password" placeholder="请输入邀请人手机号" placeholder-style="color:#aaaaaa" />
 				</view>
 			</view>
 			<view class="c-agreement">
@@ -42,7 +42,7 @@
 				</label>
 			</view>
 			<!-- <u-button :custom-style="customStyle1" shape="circle" :ripple="true">登录</u-button> -->
-			<u-button :custom-style="customStyle2" shape="circle" :ripple="true">注册</u-button>
+			<u-button :custom-style="customStyle2" shape="circle" :ripple="true" @click="toRegister">注册</u-button>
 		</view>
 	</view>
 </template>
@@ -67,6 +67,11 @@
 					height:'80rpx',
 					opacity:.6,
 				},
+				mobile:'',
+				password:'',
+				referrerMobile:'',
+				code:'',
+				verCodeText:'获取验证码',
 			};
 		},
 		methods:{
@@ -77,6 +82,35 @@
 			},
 			customBack() {
 				uni.navigateBack()
+			},
+			async toRegister() {
+				let res = await this.$http.register({
+					mobile:this.mobile,
+					password:this.password,
+					code:this.code,
+					referrerMobile:this.referrerMobile
+				})
+			},
+			async getVerify() {
+				
+				let intervalTime = 60;
+				let res = await this.$http.getCaptcha({
+					mobile: this.mobile,
+					type:0
+				})
+				// this.$t('验证码已发送至手机')
+				uni.showToast({
+					title:'验证码已发送至手机'
+				})
+				let timer = setInterval(()=>{
+					this.verCodeText = `${intervalTime}s`
+					intervalTime --
+					if(intervalTime < 0) {
+						this.verCodeText = "获取验证码"
+						clearInterval(timer)
+					}
+				},1000)
+				console.log(res);
 			}
 		}
 	}
