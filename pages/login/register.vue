@@ -15,21 +15,23 @@
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/captcha@2x.png" mode=""></image>
-					<input v-model="password" type="text" placeholder="请输入验证码" placeholder-style="color:#aaaaaa" />
+					<input v-model="code" type="text" placeholder="请输入验证码" placeholder-style="color:#aaaaaa" />
 				</view>
-				<view class="code" @click="getVerify">{{verCodeText}}</view>
+				<view class="code" :style="{opacity:verCodeText == '获取验证码' ? 1 : .5}" @click="getVerify">{{verCodeText}}</view>
 			</view>
 			<view class="c-input">
 				<view class="c-input-left">
-					<image src="/static/images/index/phone@2x.png" mode=""></image>
-					<input style="width: 420rpx;" type="text" placeholder="8-16位数字、字母或字符组成" placeholder-style="color:#aaaaaa" />
+					<image src="/static/images/index/password@2x.png" mode=""></image>
+					<input v-model="password" style="width: 420rpx;" type="password" placeholder="8-16位数字、字母或字符组成" placeholder-style="color:#aaaaaa" v-if="isHide"/>
+					<input v-model="password" style="width: 420rpx;" type="text" placeholder="8-16位数字、字母或字符组成" placeholder-style="color:#aaaaaa" v-else/>
 				</view>
-				<image src="/static/images/index/hide@2x.png" mode="" class="ice"></image>
+				<image src="/static/images/index/hide@2x.png" mode="" class="ice" @click="isHide = !isHide" v-if="isHide"></image>
+				<image src="/static/images/index/show@2x.png" mode="" class="ice" @click="isHide = !isHide" v-else></image>
 			</view>
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/invitee@2x.png" mode=""></image>
-					<input  type="password" placeholder="请输入邀请人手机号" placeholder-style="color:#aaaaaa" />
+					<input v-model="referrerMobile" type="number" placeholder="请输入邀请人手机号" placeholder-style="color:#aaaaaa" />
 				</view>
 			</view>
 			<view class="c-agreement">
@@ -41,8 +43,8 @@
 					<text style="color: #2878FF;">《隐私政策》</text>
 				</label>
 			</view>
-			<!-- <u-button :custom-style="customStyle1" shape="circle" :ripple="true">登录</u-button> -->
-			<u-button :custom-style="customStyle2" shape="circle" :ripple="true" @click="toRegister">注册</u-button>
+			<u-button :custom-style="customStyle1" shape="circle" :ripple="true" @click="toRegister">注册</u-button>
+			<!-- <u-button :custom-style="customStyle2" shape="circle" :ripple="true" @click="toRegister">注册</u-button> -->
 		</view>
 	</view>
 </template>
@@ -72,6 +74,7 @@
 				referrerMobile:'',
 				code:'',
 				verCodeText:'获取验证码',
+				isHide: true
 			};
 		},
 		methods:{
@@ -90,18 +93,22 @@
 					code:this.code,
 					referrerMobile:this.referrerMobile
 				})
+				this.$t('注册成功')
+				setTimeout(()=>{
+					uni.redirectTo({
+						url:'login'
+					})
+				},1000)
 			},
 			async getVerify() {
+				if(this.verCodeText != "获取验证码") return
 				
 				let intervalTime = 60;
 				let res = await this.$http.getCaptcha({
 					mobile: this.mobile,
 					type:0
 				})
-				// this.$t('验证码已发送至手机')
-				uni.showToast({
-					title:'验证码已发送至手机'
-				})
+				this.$t('验证码已发送至手机')
 				let timer = setInterval(()=>{
 					this.verCodeText = `${intervalTime}s`
 					intervalTime --

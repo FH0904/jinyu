@@ -15,9 +15,11 @@
 			<view class="c-input">
 				<view class="c-input-left">
 					<image src="/static/images/index/password@2x.png" mode=""></image>
-					<input type="password" v-model="password" placeholder="请输入登录密码" placeholder-style="color:#aaaaaa" />
+					<input type="password" v-model="password" placeholder="请输入登录密码" placeholder-style="color:#aaaaaa" v-if="isHide"/>
+					<input type="text" v-model="password" placeholder="请输入登录密码" placeholder-style="color:#aaaaaa" v-else/>
 				</view>
-				<image src="/static/images/index/hide@2x.png" mode="" class="ice"></image>
+				<image src="/static/images/index/hide@2x.png" mode="" class="ice" @click="isHide = !isHide" v-if="isHide"></image>
+				<image src="/static/images/index/show@2x.png" mode="" class="ice" @click="isHide = !isHide" v-else></image>
 			</view>
 			<u-button :custom-style="customStyle" shape="circle" :ripple="true" @click="login">登录</u-button>
 			<view class="forget" @click="navTo('/pages/login/forgot-password')">忘记密码</view>
@@ -43,7 +45,8 @@
 					height:'80rpx'
 				},
 				mobile:'',
-				password:''
+				password:'',
+				isHide: true
 			};
 		},
 		methods:{
@@ -61,7 +64,13 @@
 					loginType:0,
 					password:this.password
 				})
-				console.log(res);
+				uni.setStorageSync('userToken', res.data.token)
+				this.$t('登录成功')
+				setTimeout(()=>{
+					uni.switchTab({
+						url:'../tabbar/index'
+					})
+				},1000)
 			}
 		}
 	}

@@ -3,6 +3,7 @@ import uView from "uview-ui";
 import App from './App'
 import './env.js'
 import http from './service/methods.js'
+import './static/js/toast.js'
 
 Vue.config.productionTip = false
 

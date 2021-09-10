@@ -3144,7 +3144,7 @@ var render = function() {
                       callback: function($$v) {
                         _vm.$handleVModelEvent(13, $$v)
                       },
-                      expression: "password"
+                      expression: "code"
                     }
                   })
                 ],
@@ -3154,6 +3154,7 @@ var render = function() {
                 "v-uni-view",
                 {
                   staticClass: _vm._$g(14, "sc"),
+                  style: _vm._$g(14, "s"),
                   attrs: { _i: 14 },
                   on: {
                     click: function($event) {
@@ -3176,55 +3177,105 @@ var render = function() {
                 [
                   _c("v-uni-image", {
                     attrs: {
-                      src: "/static/images/index/phone@2x.png",
+                      src: "/static/images/index/password@2x.png",
                       mode: "",
                       _i: 17
                     }
                   }),
-                  _c("v-uni-input", {
-                    staticStyle: { width: "420rpx" },
-                    attrs: {
-                      type: "text",
-                      placeholder: "8-16位数字、字母或字符组成",
-                      "placeholder-style": "color:#aaaaaa",
-                      _i: 18
-                    }
-                  })
+                  _vm._$g(18, "i")
+                    ? _c("v-uni-input", {
+                        staticStyle: { width: "420rpx" },
+                        attrs: {
+                          type: "password",
+                          placeholder: "8-16位数字、字母或字符组成",
+                          "placeholder-style": "color:#aaaaaa",
+                          _i: 18
+                        },
+                        model: {
+                          value: _vm._$g(18, "v-model"),
+                          callback: function($$v) {
+                            _vm.$handleVModelEvent(18, $$v)
+                          },
+                          expression: "password"
+                        }
+                      })
+                    : _c("v-uni-input", {
+                        staticStyle: { width: "420rpx" },
+                        attrs: {
+                          type: "text",
+                          placeholder: "8-16位数字、字母或字符组成",
+                          "placeholder-style": "color:#aaaaaa",
+                          _i: 19
+                        },
+                        model: {
+                          value: _vm._$g(19, "v-model"),
+                          callback: function($$v) {
+                            _vm.$handleVModelEvent(19, $$v)
+                          },
+                          expression: "password"
+                        }
+                      })
                 ],
                 1
               ),
-              _c("v-uni-image", {
-                staticClass: _vm._$g(19, "sc"),
-                attrs: {
-                  src: "/static/images/index/hide@2x.png",
-                  mode: "",
-                  _i: 19
-                }
-              })
+              _vm._$g(20, "i")
+                ? _c("v-uni-image", {
+                    staticClass: _vm._$g(20, "sc"),
+                    attrs: {
+                      src: "/static/images/index/hide@2x.png",
+                      mode: "",
+                      _i: 20
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
+                : _c("v-uni-image", {
+                    staticClass: _vm._$g(21, "sc"),
+                    attrs: {
+                      src: "/static/images/index/show@2x.png",
+                      mode: "",
+                      _i: 21
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
+            { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
+                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
                 [
                   _c("v-uni-image", {
                     attrs: {
                       src: "/static/images/index/invitee@2x.png",
                       mode: "",
-                      _i: 22
+                      _i: 24
                     }
                   }),
                   _c("v-uni-input", {
                     attrs: {
-                      type: "password",
+                      type: "number",
                       placeholder: "请输入邀请人手机号",
                       "placeholder-style": "color:#aaaaaa",
-                      _i: 23
+                      _i: 25
+                    },
+                    model: {
+                      value: _vm._$g(25, "v-model"),
+                      callback: function($$v) {
+                        _vm.$handleVModelEvent(25, $$v)
+                      },
+                      expression: "referrerMobile"
                     }
                   })
                 ],
@@ -3235,28 +3286,28 @@ var render = function() {
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
+            { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
             [
               _c(
                 "v-uni-label",
-                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
                 [
                   _c("v-uni-radio", {
                     staticStyle: { transform: "scale(.8)" },
-                    attrs: { value: "", color: "#2878FF", _i: 26 }
+                    attrs: { value: "", color: "#2878FF", _i: 28 }
                   }),
-                  _c("v-uni-text", { attrs: { _i: 27 } }, [
+                  _c("v-uni-text", { attrs: { _i: 29 } }, [
                     _vm._v("我已阅读并同意")
                   ]),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "#2878FF" }, attrs: { _i: 28 } },
+                    { staticStyle: { color: "#2878FF" }, attrs: { _i: 30 } },
                     [_vm._v("《金鱼用户服务协议》")]
                   ),
-                  _c("v-uni-text", { attrs: { _i: 29 } }, [_vm._v("和")]),
+                  _c("v-uni-text", { attrs: { _i: 31 } }, [_vm._v("和")]),
                   _c(
                     "v-uni-text",
-                    { staticStyle: { color: "#2878FF" }, attrs: { _i: 30 } },
+                    { staticStyle: { color: "#2878FF" }, attrs: { _i: 32 } },
                     [_vm._v("《隐私政策》")]
                   )
                 ],
@@ -3268,7 +3319,7 @@ var render = function() {
           _c(
             "u-button",
             {
-              attrs: { _i: 31 },
+              attrs: { _i: 33 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -3503,10 +3554,17 @@ var render = function() {
                     }),
                     _c("v-uni-input", {
                       attrs: {
-                        type: "text",
+                        type: "number",
                         placeholder: "请输入手机号",
                         "placeholder-style": "color:#aaaaaa",
                         _i: 6
+                      },
+                      model: {
+                        value: _vm._$g(6, "v-model"),
+                        callback: function($$v) {
+                          _vm.$handleVModelEvent(6, $$v)
+                        },
+                        expression: "mobile"
                       }
                     })
                   ],
@@ -3532,10 +3590,17 @@ var render = function() {
                     }),
                     _c("v-uni-input", {
                       attrs: {
-                        type: "text",
+                        type: "number",
                         placeholder: "请输入验证码",
                         "placeholder-style": "color:#aaaaaa",
                         _i: 10
+                      },
+                      model: {
+                        value: _vm._$g(10, "v-model"),
+                        callback: function($$v) {
+                          _vm.$handleVModelEvent(10, $$v)
+                        },
+                        expression: "code"
                       }
                     })
                   ],
@@ -3543,17 +3608,28 @@ var render = function() {
                 ),
                 _c(
                   "v-uni-view",
-                  { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
-                  [_vm._v("获取验证码")]
+                  {
+                    staticClass: _vm._$g(11, "sc"),
+                    style: _vm._$g(11, "s"),
+                    attrs: { _i: 11 },
+                    on: {
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._$g(11, "t0-0"))]
                 )
               ],
               1
             ),
-            _c(
-              "v-uni-view",
-              { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-              [_vm._v("短信验证码已发送至176****0910")]
-            )
+            _vm._$g(12, "i")
+              ? _c(
+                  "v-uni-view",
+                  { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+                  [_vm._v("短信验证码已发送至" + _vm._$g(12, "t0-0"))]
+                )
+              : _vm._e()
           ]
         : [
             _c(
@@ -3571,72 +3647,180 @@ var render = function() {
                         _i: 16
                       }
                     }),
-                    _c("v-uni-input", {
-                      attrs: {
-                        type: "password",
-                        placeholder: "请输入新密码",
-                        "placeholder-style": "color:#aaaaaa",
-                        _i: 17
-                      }
-                    })
+                    _vm._$g(17, "i")
+                      ? _c("v-uni-input", {
+                          attrs: {
+                            type: "password",
+                            placeholder: "请输入新密码",
+                            "placeholder-style": "color:#aaaaaa",
+                            _i: 17
+                          },
+                          model: {
+                            value: _vm._$g(17, "v-model"),
+                            callback: function($$v) {
+                              _vm.$handleVModelEvent(17, $$v)
+                            },
+                            expression: "newPassword"
+                          }
+                        })
+                      : _c("v-uni-input", {
+                          attrs: {
+                            type: "text",
+                            placeholder: "请输入新密码",
+                            "placeholder-style": "color:#aaaaaa",
+                            _i: 18
+                          },
+                          model: {
+                            value: _vm._$g(18, "v-model"),
+                            callback: function($$v) {
+                              _vm.$handleVModelEvent(18, $$v)
+                            },
+                            expression: "newPassword"
+                          }
+                        })
                   ],
                   1
                 ),
-                _c("v-uni-image", {
-                  staticClass: _vm._$g(18, "sc"),
-                  attrs: {
-                    src: "/static/images/index/hide@2x.png",
-                    mode: "",
-                    _i: 18
-                  }
-                })
+                _vm._$g(19, "i")
+                  ? _c("v-uni-image", {
+                      staticClass: _vm._$g(19, "sc"),
+                      attrs: {
+                        src: "/static/images/index/hide@2x.png",
+                        mode: "",
+                        _i: 19
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    })
+                  : _c("v-uni-image", {
+                      staticClass: _vm._$g(20, "sc"),
+                      attrs: {
+                        src: "/static/images/index/show@2x.png",
+                        mode: "",
+                        _i: 20
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    })
               ],
               1
             ),
             _c(
               "v-uni-view",
-              { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+              { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
               [
                 _c(
                   "v-uni-view",
-                  { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
+                  { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
                   [
                     _c("v-uni-image", {
                       attrs: {
                         src: "/static/images/index/password@2x.png",
                         mode: "",
-                        _i: 21
+                        _i: 23
                       }
                     }),
-                    _c("v-uni-input", {
-                      attrs: {
-                        type: "password",
-                        placeholder: "请确认新密码",
-                        "placeholder-style": "color:#aaaaaa",
-                        _i: 22
-                      }
-                    })
+                    _vm._$g(24, "i")
+                      ? _c("v-uni-input", {
+                          attrs: {
+                            type: "password",
+                            placeholder: "请确认新密码",
+                            "placeholder-style": "color:#aaaaaa",
+                            _i: 24
+                          },
+                          model: {
+                            value: _vm._$g(24, "v-model"),
+                            callback: function($$v) {
+                              _vm.$handleVModelEvent(24, $$v)
+                            },
+                            expression: "confirmnewPassword"
+                          }
+                        })
+                      : _c("v-uni-input", {
+                          attrs: {
+                            type: "text",
+                            placeholder: "请确认新密码",
+                            "placeholder-style": "color:#aaaaaa",
+                            _i: 25
+                          },
+                          model: {
+                            value: _vm._$g(25, "v-model"),
+                            callback: function($$v) {
+                              _vm.$handleVModelEvent(25, $$v)
+                            },
+                            expression: "confirmnewPassword"
+                          }
+                        })
                   ],
                   1
                 ),
-                _c("v-uni-image", {
-                  staticClass: _vm._$g(23, "sc"),
-                  attrs: {
-                    src: "/static/images/index/hide@2x.png",
-                    mode: "",
-                    _i: 23
-                  }
-                })
+                _vm._$g(26, "i")
+                  ? _c("v-uni-image", {
+                      staticClass: _vm._$g(26, "sc"),
+                      attrs: {
+                        src: "/static/images/index/hide@2x.png",
+                        mode: "",
+                        _i: 26
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    })
+                  : _c("v-uni-image", {
+                      staticClass: _vm._$g(27, "sc"),
+                      attrs: {
+                        src: "/static/images/index/show@2x.png",
+                        mode: "",
+                        _i: 27
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.$handleViewEvent($event)
+                        }
+                      }
+                    })
               ],
               1
             ),
             _c(
               "v-uni-view",
-              { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
+              { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
               [_vm._v("账号：17603080910")]
             )
           ],
-      _c("u-button", { attrs: { _i: 25 } }, [_vm._v("下一步")])
+      _vm._$g(29, "i")
+        ? _c(
+            "u-button",
+            {
+              attrs: { _i: 29 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
+            [_vm._v("下一步")]
+          )
+        : _c(
+            "u-button",
+            {
+              attrs: { _i: 30 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
+            [_vm._v("确定")]
+          )
     ],
     2
   )
@@ -3910,39 +4094,74 @@ var render = function() {
                       _i: 12
                     }
                   }),
-                  _c("v-uni-input", {
-                    attrs: {
-                      type: "password",
-                      placeholder: "请输入登录密码",
-                      "placeholder-style": "color:#aaaaaa",
-                      _i: 13
-                    },
-                    model: {
-                      value: _vm._$g(13, "v-model"),
-                      callback: function($$v) {
-                        _vm.$handleVModelEvent(13, $$v)
-                      },
-                      expression: "password"
-                    }
-                  })
+                  _vm._$g(13, "i")
+                    ? _c("v-uni-input", {
+                        attrs: {
+                          type: "password",
+                          placeholder: "请输入登录密码",
+                          "placeholder-style": "color:#aaaaaa",
+                          _i: 13
+                        },
+                        model: {
+                          value: _vm._$g(13, "v-model"),
+                          callback: function($$v) {
+                            _vm.$handleVModelEvent(13, $$v)
+                          },
+                          expression: "password"
+                        }
+                      })
+                    : _c("v-uni-input", {
+                        attrs: {
+                          type: "text",
+                          placeholder: "请输入登录密码",
+                          "placeholder-style": "color:#aaaaaa",
+                          _i: 14
+                        },
+                        model: {
+                          value: _vm._$g(14, "v-model"),
+                          callback: function($$v) {
+                            _vm.$handleVModelEvent(14, $$v)
+                          },
+                          expression: "password"
+                        }
+                      })
                 ],
                 1
               ),
-              _c("v-uni-image", {
-                staticClass: _vm._$g(14, "sc"),
-                attrs: {
-                  src: "/static/images/index/hide@2x.png",
-                  mode: "",
-                  _i: 14
-                }
-              })
+              _vm._$g(15, "i")
+                ? _c("v-uni-image", {
+                    staticClass: _vm._$g(15, "sc"),
+                    attrs: {
+                      src: "/static/images/index/hide@2x.png",
+                      mode: "",
+                      _i: 15
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
+                : _c("v-uni-image", {
+                    staticClass: _vm._$g(16, "sc"),
+                    attrs: {
+                      src: "/static/images/index/show@2x.png",
+                      mode: "",
+                      _i: 16
+                    },
+                    on: {
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
             ],
             1
           ),
           _c(
             "u-button",
             {
-              attrs: { _i: 15 },
+              attrs: { _i: 17 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -3954,8 +4173,8 @@ var render = function() {
           _c(
             "v-uni-view",
             {
-              staticClass: _vm._$g(16, "sc"),
-              attrs: { _i: 16 },
+              staticClass: _vm._$g(18, "sc"),
+              attrs: { _i: 18 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -3969,14 +4188,14 @@ var render = function() {
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+        { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
         [
-          _c("v-uni-text", { attrs: { _i: 18 } }, [_vm._v("没有账号？")]),
+          _c("v-uni-text", { attrs: { _i: 20 } }, [_vm._v("没有账号？")]),
           _c(
             "v-uni-text",
             {
-              staticClass: _vm._$g(19, "sc"),
-              attrs: { _i: 19 },
+              staticClass: _vm._$g(21, "sc"),
+              attrs: { _i: 21 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)

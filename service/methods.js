@@ -9,7 +9,7 @@ const login = (data) => {
 		data
 	})
 }
-// 登录
+// 注册
 const register = (data) => {
 	return http.request({
 		url: 'app/auth/register',
@@ -18,10 +18,19 @@ const register = (data) => {
 		data
 	})
 }
-// 登录
+// 获取验证码
 const getCaptcha = (data) => {
 	return http.request({
 		url: 'app/auth/getCaptcha',
+		dataType: 'json',
+		method: 'POST',
+		data
+	})
+}
+// 找回密码
+const findPassword = (data) => {
+	return http.request({
+		url: 'app/member/findPassword',
 		dataType: 'json',
 		method: 'POST',
 		data
@@ -38,5 +47,6 @@ export default {
 	uploadPicture,
 	login,
 	register,
-	getCaptcha
+	getCaptcha,
+	findPassword
 }
