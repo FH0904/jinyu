@@ -137,9 +137,9 @@ window.__uniConfig = { "window": { "navigationBarTextStyle": "black", "navigatio
 if (uni.restoreGlobal) {
   uni.restoreGlobal(weex, plus, setTimeout, clearTimeout, setInterval, clearInterval);
 }
+__definePage('pages/tabbar/index', function () {return Vue.extend(__webpack_require__(/*! pages/tabbar/index.vue?mpType=page */ 38).default);});
 __definePage('pages/login/login', function () {return Vue.extend(__webpack_require__(/*! pages/login/login.vue?mpType=page */ 80).default);});
 __definePage('pages/tabbar/profile', function () {return Vue.extend(__webpack_require__(/*! pages/tabbar/profile.vue?mpType=page */ 2).default);});
-__definePage('pages/tabbar/index', function () {return Vue.extend(__webpack_require__(/*! pages/tabbar/index.vue?mpType=page */ 38).default);});
 __definePage('pages/tabbar/invitation', function () {return Vue.extend(__webpack_require__(/*! pages/tabbar/invitation.vue?mpType=page */ 46).default);});
 __definePage('pages/login/register', function () {return Vue.extend(__webpack_require__(/*! pages/login/register.vue?mpType=page */ 64).default);});
 __definePage('pages/login/forgot-password', function () {return Vue.extend(__webpack_require__(/*! pages/login/forgot-password.vue?mpType=page */ 72).default);});
@@ -5783,16 +5783,57 @@ var render = function() {
                     "v-uni-view",
                     { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
                     [
-                      _c("v-uni-text", { attrs: { _i: 10 } }, [
-                        _vm._v("请选择银行")
-                      ]),
-                      _c("v-uni-image", {
-                        attrs: {
-                          src: "/static/images/profile/determine@2x.png",
-                          mode: "",
-                          _i: 11
-                        }
-                      })
+                      _c(
+                        "v-uni-picker",
+                        {
+                          attrs: {
+                            value: _vm._$g(10, "a-value"),
+                            range: _vm._$g(10, "a-range"),
+                            "range-key": "bankName",
+                            _i: 10
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.$handleViewEvent($event)
+                            }
+                          }
+                        },
+                        [
+                          _vm._$g(11, "i")
+                            ? [
+                                _c("v-uni-text", { attrs: { _i: 12 } }, [
+                                  _vm._v("请选择银行")
+                                ]),
+                                _c("v-uni-image", {
+                                  attrs: {
+                                    src:
+                                      "/static/images/profile/determine@2x.png",
+                                    mode: "",
+                                    _i: 13
+                                  }
+                                })
+                              ]
+                            : [
+                                _c(
+                                  "v-uni-text",
+                                  {
+                                    staticStyle: { color: "#222" },
+                                    attrs: { _i: 15 }
+                                  },
+                                  [_vm._v(_vm._$g(15, "t0-0"))]
+                                ),
+                                _c("v-uni-image", {
+                                  attrs: {
+                                    src:
+                                      "/static/images/profile/determine@2x.png",
+                                    mode: "",
+                                    _i: 16
+                                  }
+                                })
+                              ]
+                        ],
+                        2
+                      )
                     ],
                     1
                   )
@@ -5805,34 +5846,74 @@ var render = function() {
           _c(
             "v-uni-view",
             {
-              staticClass: _vm._$g(12, "sc"),
+              staticClass: _vm._$g(17, "sc"),
               staticStyle: { border: "0" },
-              attrs: { _i: 12 }
+              attrs: { _i: 17 }
             },
             [
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
                 [_vm._v("卡类型")]
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
                 [
                   _c(
                     "v-uni-view",
-                    { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                    { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
                     [
-                      _c("v-uni-text", { attrs: { _i: 16 } }, [
-                        _vm._v("请选择卡类型")
-                      ]),
-                      _c("v-uni-image", {
-                        attrs: {
-                          src: "/static/images/profile/determine@2x.png",
-                          mode: "",
-                          _i: 17
-                        }
-                      })
+                      _c(
+                        "v-uni-picker",
+                        {
+                          attrs: {
+                            value: _vm._$g(21, "a-value"),
+                            range: _vm._$g(21, "a-range"),
+                            _i: 21
+                          },
+                          on: {
+                            change: function($event) {
+                              return _vm.$handleViewEvent($event)
+                            }
+                          }
+                        },
+                        [
+                          _vm._$g(22, "i")
+                            ? [
+                                _c("v-uni-text", { attrs: { _i: 23 } }, [
+                                  _vm._v("请选择卡类型")
+                                ]),
+                                _c("v-uni-image", {
+                                  attrs: {
+                                    src:
+                                      "/static/images/profile/determine@2x.png",
+                                    mode: "",
+                                    _i: 24
+                                  }
+                                })
+                              ]
+                            : [
+                                _c(
+                                  "v-uni-text",
+                                  {
+                                    staticStyle: { color: "#222" },
+                                    attrs: { _i: 26 }
+                                  },
+                                  [_vm._v(_vm._$g(26, "t0-0"))]
+                                ),
+                                _c("v-uni-image", {
+                                  attrs: {
+                                    src:
+                                      "/static/images/profile/determine@2x.png",
+                                    mode: "",
+                                    _i: 27
+                                  }
+                                })
+                              ]
+                        ],
+                        2
+                      )
                     ],
                     1
                   )
@@ -5847,12 +5928,12 @@ var render = function() {
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+        { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
         [
           _c(
             "u-button",
             {
-              attrs: { _i: 19 },
+              attrs: { _i: 29 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)

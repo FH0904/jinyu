@@ -36,6 +36,24 @@ const findPassword = (data) => {
 		data
 	})
 }
+// 获取会员信息
+const memberInfo = (data) => {
+	return http.request({
+		url: 'app/member/getMemberInfo',
+		dataType: 'json',
+		method: 'get',
+		data
+	})
+}
+// 查询绑卡支持的银行列表
+const queryAllBankList = (data) => {
+	return http.request({
+		url: 'app/bankcard/queryAllBankList',
+		dataType: 'json',
+		method: 'get',
+		data
+	})
+}
 
 // 文件上传接口
 const uploadPicture = (filePath, data = {}, fileType = 'image') => {
@@ -48,5 +66,7 @@ export default {
 	login,
 	register,
 	getCaptcha,
-	findPassword
+	findPassword,
+	queryAllBankList,
+	memberInfo
 }

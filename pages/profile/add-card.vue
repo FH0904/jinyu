@@ -11,8 +11,16 @@
 				<view class="c-left">银行</view>
 				<view class="c-right">
 					<view class="r-text">
-						<text>请选择银行</text>
-						<image src="/static/images/profile/determine@2x.png" mode=""></image>
+						<picker @change="bindPickerChange1" :value="index1" :range="array1" range-key="bankName">
+							<block v-if="index1 == -1">
+								<text>请选择银行</text>
+								<image src="/static/images/profile/determine@2x.png" mode=""></image>
+							</block>
+							<block v-else>
+								<text style="color: #222;">{{array1[index1].bankName}}</text>
+								<image src="/static/images/profile/determine@2x.png" mode=""></image>
+							</block>
+						</picker>
 					</view>
 				</view>
 			</view>
@@ -20,8 +28,18 @@
 				<view class="c-left">卡类型</view>
 				<view class="c-right">
 					<view class="r-text">
-						<text>请选择卡类型</text>
-						<image src="/static/images/profile/determine@2x.png" mode=""></image>
+						
+						
+						<picker @change="bindPickerChange2" :value="index2" :range="array2">
+							<block v-if="index2 == -1">
+								<text>请选择卡类型</text>
+								<image src="/static/images/profile/determine@2x.png" mode=""></image>
+							</block>
+							<block v-else>
+								<text style="color: #222;">{{array2[index2]}}</text>
+								<image src="/static/images/profile/determine@2x.png" mode=""></image>
+							</block>
+						</picker>
 					</view>
 				</view>
 			</view>
@@ -41,7 +59,11 @@
 					color:'#fff',
 					height:'80rpx',
 					width:'690rpx'
-				}
+				},
+				array1: [],
+				index1: -1,
+				array2: ['储蓄卡','信用卡'],
+				index2: -1,
 			};
 		},
 		methods:{
@@ -49,7 +71,21 @@
 				uni.navigateTo({
 					url:'add-card2'
 				})
-			}
+			},
+			async getAllBankList() {
+				let res = await this.$http.queryAllBankList()
+				console.log(res);
+				this.array1 = res.data
+			},
+			bindPickerChange1(e){
+				this.index1 = e.target.value
+			},
+			bindPickerChange2(e){
+				this.index2 = e.target.value
+			},
+		},
+		onShow() {
+			this.getAllBankList()
 		}
 	}
 </script>

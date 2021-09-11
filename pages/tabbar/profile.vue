@@ -72,7 +72,17 @@
 				uni.navigateTo({
 					url
 				})
+			},
+			async getMemberInfo() {
+				let res = await this.$http.memberInfo()
+				console.log(res);
 			}
+		},
+		onLoad() {
+			!uni.getStorageSync('userToken')&&uni.navigateTo({
+				url:'../login/login'
+			})
+			this.getMemberInfo()
 		}
 	}
 </script>

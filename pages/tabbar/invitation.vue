@@ -53,6 +53,11 @@
 					url
 				})
 			}
+		},
+		onLoad() {
+			!uni.getStorageSync('userToken')&&uni.navigateTo({
+				url:'../login/login'
+			})
 		}
 	}
 </script>
